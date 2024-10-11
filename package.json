@@ -4,16 +4,21 @@
   "main": "index.ts",
   "scripts": {
     "dev": "nodemon",
-    "start": "node dist/index.js",
+    "st  art": "node dist/index.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": [
+    "node",
+    "express",
+    "typescript",
+    "eslint",
+    "prettier"
+  ],
+  "author": "Horacio",
+  "license": "MIT",
+  "description": "“Proyecto completo con Express para la materia de IoT 2024 Tec de Monterrey en el módulo de bases de datos",
   "dependencies": {
     "dotenv": "^16.4.5",
     "express": "^4.21.1"
