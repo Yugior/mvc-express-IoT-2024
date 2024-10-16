@@ -21,7 +21,8 @@
   "description": "“Proyecto completo con Express para la materia de IoT 2024 Tec de Monterrey en el módulo de bases de datos",
   "dependencies": {
     "dotenv": "^16.4.5",
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "mysql2": "^3.11.3"
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.4",
