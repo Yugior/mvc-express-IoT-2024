@@ -5,10 +5,10 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const configOptions: ConnectionOptions = {
-  host: process.env.MYSQL_HOST,
-  user: process.env.MYSQL_USERNAME,
-  password: process.env.MYSQL_PASSWORD,
-  database: process.env.MYSQL_DATABASE,
+  host: "127.0.0.1",
+  user: "root",
+  password: "Horasfeb@2015",
+  database: "school",
   port: Number(process.env.MYSQL_PORT) || 3306,
 };
 

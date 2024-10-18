@@ -12,6 +12,6 @@ app.use(express.json());
 
 app.use("/student", studentRouter);
 
-app.listen(process.env.SERVER_PORT, function () {
-  console.log("Escuchando puerto " + process.env.SERVER_PORT);
+app.listen(3000, function () {
+  console.log("Escuchando puerto " + 3000);
 });
