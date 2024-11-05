@@ -18,7 +18,7 @@ export const studentSchema = z.object({
         const parsedDate = Date.parse(date);
         return !isNaN(parsedDate);
       },
-      { message: "Fecha de nacimiento inválida" }
+      { message: "Fecha de nacimiento inválida" },
     ),
   email: z.string().email({ message: "Debe ser un email válido" }),
   address: z
@@ -32,7 +32,7 @@ export const studentSchema = z.object({
         const numero = direccion.split(" ")[1].replace(",", "");
         return !isNaN(Number(numero));
       },
-      { message: "El número de la dirección debe ser válido" }
+      { message: "El número de la dirección debe ser válido" },
     )
     .optional(),
   phone: z
@@ -58,6 +58,6 @@ export const studentSchema = z.object({
         const numero = parseInt(grade.slice(0, -1), 10);
         return numero >= 1 && numero <= 12;
       },
-      { message: "El número de grade_level debe estar entre 1° y 12°" }
+      { message: "El número de grade_level debe estar entre 1° y 12°" },
     ),
 });

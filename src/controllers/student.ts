@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
-
-import { deleteById, findAll, insert, update } from "../services/student";
+import { deleteById, findAll, update } from "../services/student";
 import { Student } from "../interface/student";
 import { insertStudent } from "../models/student";
 

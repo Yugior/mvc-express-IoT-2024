@@ -5,7 +5,7 @@ const unknownError = (
   req: Request,
   res: Response,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  next: NextFunction
+  next: NextFunction,
 ) => {
   console.error(err.stack);
   res.status(500).json({
