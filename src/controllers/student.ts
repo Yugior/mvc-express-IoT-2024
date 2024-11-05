@@ -2,36 +2,32 @@ import { Request, Response } from "express";
 
 import { deleteById, findAll, insert, update } from "../services/student";
 import { Student } from "../interface/student";
+import { insertStudent } from "../models/student";
 
 // Obtener todos los alumnos
 export const getStudent = async (req: Request, res: Response) => {
   try {
-    const students = await findAll();
+    // Obtener parámetros de paginación con valores por defecto
+    const page = parseInt(req.query.page as string) || 1;
+    const limit = parseInt(req.query.limit as string) || 5;
+    // Calcular offset
+    const offset = (page - 1) * limit;
+    const students = await findAll(limit, offset);
+
     res.status(200).json(students);
   } catch (error) {
     res.status(400).json({ message: "Error al obtener alumnos", error });
   }
 };
-
 export const createStudent = async (req: Request, res: Response) => {
   try {
     const student: Student = req.body;
-    await insert(student);
+    await insertStudent(student);
     res.status(201).json({ message: "Alumno creado exitosamente" });
   } catch (error) {
     res.status(400).json({ message: "Error al crear alumno", error });
   }
 };
-
-export const getStudents = async (req: Request, res: Response) => {
-  try {
-    const students = await findAll();
-    res.status(200).json(students);
-  } catch (error) {
-    res.status(400).json({ message: "Error al obtener alumnos", error });
-  }
-};
-
 export const updateStudent = async (req: Request, res: Response) => {
   try {
     const id = Number.parseInt(req.params.id);
@@ -42,7 +38,6 @@ export const updateStudent = async (req: Request, res: Response) => {
     res.status(400).json({ message: "Error al actualizar el alumno", error });
   }
 };
-
 export const deleteStudent = async (req: Request, res: Response) => {
   try {
     const id = Number.parseInt(req.params.id);

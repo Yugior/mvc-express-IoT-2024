@@ -1,12 +1,12 @@
 {
   "extends": "@tsconfig/node20/tsconfig.json",
   "compilerOptions": {
-    "outDir": "./dlist",
+    "outDir": "dist",
     "rootDir": "./src",
     "forceConsistentCasingInFileNames": true,
     "typeRoots": ["./node_modules/@types"],
     "types": ["node", "express"]
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "dlist"]
+  "exclude": ["node_modules", "dist"]
 }
