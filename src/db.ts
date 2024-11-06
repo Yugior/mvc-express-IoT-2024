@@ -7,10 +7,10 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 const configOptions: ConnectionOptions = {
-  host: "127.0.0.1",
-  user: "root",
-  password: "Horasfeb@2015",
-  database: "school",
+  host: process.env.MYSQL_HOST,
+  user: process.env.MYSQL_USERNAME,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DATABASE,
   port: Number(process.env.MYSQL_PORT) || 3306,
 };
 
